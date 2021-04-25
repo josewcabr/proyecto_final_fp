@@ -1,0 +1,29 @@
+-------- ip:8080/compra ----------
+
+{
+    "cliente":{
+        "id":"1"
+    },
+    "producto":{
+        "id":"1"
+    },
+    "amount":"3",
+    "date":"2021-04-25"
+}
+
+
+------- ip:8080/cliente ----------
+
+{
+    "name":"jose",
+    "lastName":"cabrera",
+    "phone":"684117662"
+}
+
+
+------- ip:8080/producto ---------
+
+{
+    "name":"bajo",
+    "price":"3.90"
+}
