@@ -5,7 +5,7 @@ import java.io.Serializable;
 import java.time.LocalDate;
 
 @Entity
-@Table
+@Table (name = "compras")
 public class Compra implements Serializable {
 
     @Id
@@ -15,17 +15,17 @@ public class Compra implements Serializable {
 
     //Relación muchos a uno, una Compra solo puede tener un Cliente
     @ManyToOne
-    @JoinColumn(name = "FK_idCliente", nullable = false)
+    @JoinColumn(name = "fk_id_cliente", nullable = false)
     private Cliente cliente;
 
     //Relación muchos a uno, una Compra solo puede tener un Producto (con su cantidad)
     @ManyToOne
-    @JoinColumn(name = "FK_idProducto", nullable = false)
+    @JoinColumn(name = "fk_id_producto", nullable = false)
     private Producto producto;
 
     @Column(nullable = false)
     private int amount;
-    @Column(nullable = false)
+    @Column(nullable = false, name = "buy_date")
     private LocalDate date;
 
     public Compra(){}
