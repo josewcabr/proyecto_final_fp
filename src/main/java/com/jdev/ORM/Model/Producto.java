@@ -24,6 +24,12 @@ public class Producto implements Serializable {
     @Column (nullable = false)
     private float price;
 
+
+
+    @Column(nullable = false, name = "wear_type")
+    private String wearType;
+
+
     //Relacion uno a muchos, un producto puede estar en muchas compras.
     @OneToMany(mappedBy = "producto", cascade = CascadeType.ALL)
     Set<Compra> Compra = new HashSet<Compra>();
@@ -33,6 +39,10 @@ public class Producto implements Serializable {
     public Producto(String nombre, float price){
         this.name = nombre;
         this.price = price;
+    }
+
+    public void setWearType(String wearType) {
+        this.wearType = wearType;
     }
 
     public void setId(int id) {
@@ -61,6 +71,10 @@ public class Producto implements Serializable {
 
     public float getPrice() {
         return price;
+    }
+
+    public String getWearType() {
+        return wearType;
     }
 
     /*public Set<com.jdev.ORM.Model.Compra> getCompra() {
